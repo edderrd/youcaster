@@ -1,0 +1,18 @@
+@setup
+    $host = 'example.com';
+    $branch = 'master';
+    $siteName = 'youcaster.example.com';
+    $user = get_current_user();
+    $repository = 'git@gitlab.com:edderrd/youcaster.git';
+@endsetup
+
+@servers(['web' => "$user@$host"])
+
+@task('deploy', ['on' => 'web'])
+    cd /var/www/{{$siteName}}
+    git pull origin {{$branch}}
+    composer install --no-dev
+    php artisan migrate --force
+    npm install
+    npm run production
+@endtask

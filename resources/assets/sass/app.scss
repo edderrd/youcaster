@@ -1,0 +1,31 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Ionicons
+@import '~ionicons/dist/scss/ionicons';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 992px) {
+  .modal-dialog {
+    max-width: 80%;
+  }
+}
+
+.avatar {
+  height: 20px;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0 6px 0 0;
+  border-radius: 20px;
+}
